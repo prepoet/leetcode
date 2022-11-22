@@ -19,34 +19,22 @@ func longestCommonPrefix(strs []string) string {
 			minL = l
 		}
 	}
-	minLStr := strs[minLStrIndex]
 	result := ""
-	tmp := ""
-	for i, c := range minLStr {
-		subStr := tmp + string(c)
+	for _, c := range strs[minLStrIndex] {
+		subStr := result + string(c)
 		find := true
 		for j, str := range strs {
 			if j == minLStrIndex {
 				continue
 			}
-			// 这里替换为 strings.Contains 方法 且 find = false 的break去掉 就为 最长公共子串
 			if !strings.HasPrefix(str, subStr) {
 				find = false
 				break
 			}
 		}
 		if find {
-			tmp = subStr
-			if i == minL-1 {
-				// 最后一个字符
-				if len(tmp) > len(result) {
-					result = tmp
-				}
-			}
+			result = subStr
 		} else {
-			if len(tmp) > len(result) {
-				result = tmp
-			}
 			break
 		}
 	}
