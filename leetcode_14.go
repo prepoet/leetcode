@@ -1,8 +1,6 @@
 package main
 
-import (
-	"strings"
-)
+import "strings"
 
 //Write a function to find the longest common prefix string amongst an array of strings.
 //If there is no common prefix, return an empty string "".
@@ -10,24 +8,13 @@ import (
 //0 <= strs[i].length <= 200
 //strs[i] consists of only lowercase English letters.
 func longestCommonPrefix(strs []string) string {
-	minL := len(strs[0])
-	var minLStrIndex int
-	for i, str := range strs {
-		l := len(str)
-		if len(str) < minL {
-			minLStrIndex = i
-			minL = l
-		}
-	}
 	result := ""
-	for _, c := range strs[minLStrIndex] {
+	sl := len(strs)
+	for _, c := range strs[0] {
 		subStr := result + string(c)
 		find := true
-		for j, str := range strs {
-			if j == minLStrIndex {
-				continue
-			}
-			if !strings.HasPrefix(str, subStr) {
+		for i := 1; i < sl; i++ {
+			if !strings.HasPrefix(strs[i], subStr) {
 				find = false
 				break
 			}
