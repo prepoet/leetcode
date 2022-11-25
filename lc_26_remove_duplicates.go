@@ -2,8 +2,6 @@ package main
 
 import "sort"
 
-const max = 101
-
 func removeDuplicates(nums []int) int {
 	ln := 0
 	l := len(nums)
@@ -11,7 +9,8 @@ func removeDuplicates(nums []int) int {
 		before := nums[i-1]
 		cur := nums[i]
 		if before == cur {
-			nums[i-1] = max
+			// max num is 100
+			nums[i-1] = 101
 		} else {
 			ln++
 		}
