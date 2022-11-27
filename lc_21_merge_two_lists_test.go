@@ -1,23 +1,22 @@
 package main
 
 import (
-	"reflect"
+	"fmt"
 	"testing"
 )
 
 func TestMergeTwoLists(t *testing.T) {
-	var tests = []struct {
-		input1 *ListNode
-		input2 *ListNode
-		want   *ListNode
-	}{
-		{
-			// 暂时没想到测试用例的快速构建 使用json反序列化是否可行
-		},
-	}
-	for _, test := range tests {
-		if got := mergeTwoLists(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
-			t.Errorf("mergeTwoLists(%v, %v) = %v", test.input1, test.input2, got)
-		}
-	}
+	node11 := ListNode{1, nil}
+	node12 := ListNode{2, nil}
+	node14 := ListNode{4, nil}
+	node11.Next = &node12
+	node12.Next = &node14
+
+	node21 := ListNode{1, nil}
+	node23 := ListNode{3, nil}
+	node24 := ListNode{4, nil}
+	node21.Next = &node23
+	node23.Next = &node24
+	node3 := mergeTwoLists(&node11, &node21)
+	fmt.Printf("%v", node3)
 }
