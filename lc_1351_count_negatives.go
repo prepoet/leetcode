@@ -1,5 +1,5 @@
-//leetcode_1351
-package main
+// leetcode_1351
+package leetcode
 
 func countNegatives(grid [][]int) int {
 	m := len(grid[0])
