@@ -1,6 +1,7 @@
-package main
+package leetcode
 
-/**
+/*
+*
 O(log n) 二分查找
 */
 func searchInsert(nums []int, target int) int {

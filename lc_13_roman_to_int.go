@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 var roman = map[string]int{
 	"I":  1,

@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 func plusOne(digits []int) []int {
 	l := len(digits)
