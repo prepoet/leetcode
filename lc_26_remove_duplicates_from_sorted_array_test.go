@@ -17,5 +17,9 @@ func TestRemoveDuplicates(t *testing.T) {
 		if got := removeDuplicates(test.input); !reflect.DeepEqual(got, test.want) {
 			t.Errorf("removeDuplicates(%v) = %v", test.input, got)
 		}
+		if got := removeDuplicates1(test.input); !reflect.DeepEqual(got, test.want) {
+			t.Errorf("removeDuplicates1(%v) = %v", test.input, got)
+		}
 	}
 }
+

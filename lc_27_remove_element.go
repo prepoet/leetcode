@@ -1,6 +1,27 @@
 package leetcode
 
+// 双指针
 func removeElement(nums []int, val int) int {
+	len := len(nums)
+	num, left, right := 0, 0, len-1
+	for left <= right {
+		if nums[left] == val {
+			if nums[right] != val {
+				// 交换
+				nums[left] = nums[right]
+				nums[right] = val
+				left++
+			}
+			right--
+			num++
+		} else {
+			left++
+		}
+	}
+	return len - num
+}
+
+func removeElement1(nums []int, val int) int {
 	same := 0
 	l := len(nums)
 	j := l - 1

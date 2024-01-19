@@ -11,5 +11,5 @@ func Test_deleteDuplicates(t *testing.T) {
 	l11 := ListNode{1, &l12}
 	l1 := ListNode{1, &l11}
 	r := deleteDuplicates(&l1)
-	fmt.Printf("%v", r)
+	fmt.Printf("xxx: %v", r)
 }
