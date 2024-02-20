@@ -44,3 +44,16 @@ func removeElement1(nums []int, val int) int {
 	}
 	return l - same
 }
+
+// 快慢指针
+func removeElement2(nums []int, val int) int {
+	slow, fast := 0, 0
+	for fast < len(nums) {
+		if nums[fast] != val {
+			nums[slow] = nums[fast]
+			slow++
+		}
+		fast++
+	}
+	return slow
+}

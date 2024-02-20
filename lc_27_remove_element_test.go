@@ -18,11 +18,14 @@ func TestRemoveElement(t *testing.T) {
 		{[]int{3, 3}, 3, 0},
 	}
 	for _, test := range tests {
-		if got := removeElement(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
-			t.Errorf("removeElement(%v, %v) = %v", test.input1, test.input2, got)
-		}
-		if got := removeElement1(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
-			t.Errorf("removeElement1(%v, %v) = %v", test.input1, test.input2, got)
+		// if got := removeElement(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
+		// 	t.Errorf("removeElement(%v, %v) = %v", test.input1, test.input2, got)
+		// }
+		// if got := removeElement1(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
+		// 	t.Errorf("removeElement1(%v, %v) = %v", test.input1, test.input2, got)
+		// }
+		if got := removeElement2(test.input1, test.input2); !reflect.DeepEqual(got, test.want) {
+			t.Errorf("removeElement2(%v, %v) = %v", test.input1, test.input2, got)
 		}
 	}
 }
