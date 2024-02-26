@@ -1,4 +1,4 @@
-package leetcode
+package other
 
 import (
 	"strings"

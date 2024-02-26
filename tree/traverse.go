@@ -1,12 +1,11 @@
 package btree
 
-import "leetcode"
+import "algorithms/leetcode"
 
 func preTraverse(root *leetcode.TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
-	// root.Val
 	array := []int{}
 	array = append(array, root.Val)
 	array = append(array, preTraverse(root.Left)...)
@@ -18,7 +17,6 @@ func inTraverse(root *leetcode.TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
-	// root.Val
 	array := []int{}
 	array = append(array, inTraverse(root.Left)...)
 	array = append(array, root.Val)
@@ -31,7 +29,6 @@ func postTraverse(root *leetcode.TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
-	// root.Val
 	array := []int{}
 	array = append(array, postTraverse(root.Left)...)
 	array = append(array, postTraverse(root.Right)...)
