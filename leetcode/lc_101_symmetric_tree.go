@@ -1,7 +1,5 @@
 package leetcode
 
-import "golang.org/x/tools/go/analysis/passes/appends"
-
 // 纯遍历
 func isSymmetric(root *TreeNode) bool {
 	nodes := []*TreeNode{root.Left, root.Right}
